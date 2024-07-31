@@ -1,0 +1,110 @@
+[gd_scene load_steps=8 format=3 uid="uid://cednmhgto25hs"]
+
+[ext_resource type="FontFile" uid="uid://b63o6avkqtyaq" path="res://fonts/Quicksand-SemiBold.ttf" id="1_l2u1e"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_b1d2b"]
+font = ExtResource("1_l2u1e")
+font_size = 32
+font_color = Color(0.470588, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_8jol6"]
+font = ExtResource("1_l2u1e")
+font_size = 17
+font_color = Color(0.470588, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_51p2u"]
+bg_color = Color(0.821911, 1.85303e-06, 7.70092e-07, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.470588, 0, 0, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_idy2d"]
+bg_color = Color(0.470588, 0, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.423185, 5.65536e-07, 9.62615e-08, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="Theme" id="Theme_oxhv7"]
+Button/font_sizes/font_size = 32
+Button/fonts/font = ExtResource("1_l2u1e")
+Button/styles/hover = SubResource("StyleBoxFlat_51p2u")
+Button/styles/normal = SubResource("StyleBoxFlat_idy2d")
+
+[sub_resource type="LabelSettings" id="LabelSettings_e3la7"]
+font = ExtResource("1_l2u1e")
+font_size = 20
+font_color = Color(0.470588, 0, 0, 1)
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.917647, 0.917647, 0.917647, 1)
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -192.5
+offset_top = 11.0
+offset_right = 192.5
+offset_bottom = 51.0
+grow_horizontal = 2
+text = "TicTacToe x Minesweeper"
+label_settings = SubResource("LabelSettings_b1d2b")
+
+[node name="credits" type="Label" parent="."]
+layout_mode = 0
+offset_left = -5.0
+offset_top = 574.0
+offset_right = 208.0
+offset_bottom = 670.0
+text = "Credits:
+Made by Qwatrum"
+label_settings = SubResource("LabelSettings_8jol6")
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 484.0
+offset_top = 274.0
+offset_right = 615.0
+offset_bottom = 334.0
+theme = SubResource("Theme_oxhv7")
+text = "Play"
+
+[node name="Introduction" type="Label" parent="."]
+offset_left = 402.0
+offset_top = 487.0
+offset_right = 1063.0
+offset_bottom = 596.0
+text = "Try to find every allowed field!
+
+Click fields and when it is not a space neither 
+your first clicked letter, than you looose..."
+label_settings = SubResource("LabelSettings_e3la7")
+horizontal_alignment = 1
