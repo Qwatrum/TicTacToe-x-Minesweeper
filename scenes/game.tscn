@@ -1,0 +1,67 @@
+[gd_scene load_steps=6 format=3 uid="uid://bs22a87h071d8"]
+
+[ext_resource type="Script" path="res://scenes/game.gd" id="1_hth4a"]
+[ext_resource type="PackedScene" uid="uid://bqqr42rsgjo0m" path="res://scenes/field_lines.tscn" id="1_ufoy2"]
+[ext_resource type="FontFile" uid="uid://b63o6avkqtyaq" path="res://fonts/Quicksand-SemiBold.ttf" id="2_5tbpl"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_j4w24"]
+font = ExtResource("2_5tbpl")
+font_size = 32
+font_color = Color(0.470588, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_pnmup"]
+font = ExtResource("2_5tbpl")
+font_size = 64
+font_color = Color(0.470588, 0, 0, 1)
+
+[node name="Game" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_hth4a")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.917647, 0.917647, 0.917647, 1)
+
+[node name="FieldLines" parent="." instance=ExtResource("1_ufoy2")]
+layout_mode = 1
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 576.0
+offset_top = 324.0
+offset_right = 576.0
+offset_bottom = 324.0
+grow_horizontal = 1
+grow_vertical = 1
+scale = Vector2(5, 5)
+
+[node name="Stats" type="Label" parent="."]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 88.0
+offset_right = 176.0
+offset_bottom = 128.0
+text = "Allowed: "
+label_settings = SubResource("LabelSettings_j4w24")
+
+[node name="msg" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 396.0
+offset_top = 8.0
+offset_right = 762.0
+offset_bottom = 88.0
+text = "GAME OVER"
+label_settings = SubResource("LabelSettings_pnmup")

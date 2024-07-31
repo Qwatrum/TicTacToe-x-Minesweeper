@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://cednmhgto25hs"]
+[gd_scene load_steps=9 format=3 uid="uid://cednmhgto25hs"]
 
 [ext_resource type="FontFile" uid="uid://b63o6avkqtyaq" path="res://fonts/Quicksand-SemiBold.ttf" id="1_l2u1e"]
+[ext_resource type="Script" path="res://scenes/menu.gd" id="1_xksd8"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_b1d2b"]
 font = ExtResource("1_l2u1e")
@@ -44,7 +45,7 @@ Button/styles/normal = SubResource("StyleBoxFlat_idy2d")
 
 [sub_resource type="LabelSettings" id="LabelSettings_e3la7"]
 font = ExtResource("1_l2u1e")
-font_size = 20
+font_size = 25
 font_color = Color(0.470588, 0, 0, 1)
 
 [node name="Menu" type="Control"]
@@ -54,6 +55,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_xksd8")
 
 [node name="Background" type="ColorRect" parent="."]
 layout_mode = 1
@@ -88,23 +90,26 @@ Made by Qwatrum"
 label_settings = SubResource("LabelSettings_8jol6")
 horizontal_alignment = 1
 
-[node name="Button" type="Button" parent="."]
+[node name="Play" type="Button" parent="."]
 layout_mode = 0
-offset_left = 484.0
-offset_top = 274.0
-offset_right = 615.0
-offset_bottom = 334.0
+offset_left = 485.0
+offset_top = 325.0
+offset_right = 616.0
+offset_bottom = 385.0
 theme = SubResource("Theme_oxhv7")
 text = "Play"
 
 [node name="Introduction" type="Label" parent="."]
-offset_left = 402.0
-offset_top = 487.0
-offset_right = 1063.0
-offset_bottom = 596.0
+layout_mode = 0
+offset_left = 222.0
+offset_top = 114.0
+offset_right = 883.0
+offset_bottom = 251.0
 text = "Try to find every allowed field!
 
 Click fields and when it is not a space neither 
 your first clicked letter, than you looose..."
 label_settings = SubResource("LabelSettings_e3la7")
 horizontal_alignment = 1
+
+[connection signal="button_down" from="Play" to="." method="_on_play_button_down"]

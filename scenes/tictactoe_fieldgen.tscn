@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dbubf3ei4u8tt"]
+
+[ext_resource type="Script" path="res://scenes/tictactoe_fieldgen.gd" id="1_jpiqt"]
+
+[node name="TictactoeFieldGen" type="Node2D"]
+script = ExtResource("1_jpiqt")
