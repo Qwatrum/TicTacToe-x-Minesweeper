@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://bs22a87h071d8"]
+[gd_scene load_steps=10 format=3 uid="uid://bs22a87h071d8"]
 
 [ext_resource type="Script" path="res://scenes/game.gd" id="1_hth4a"]
 [ext_resource type="PackedScene" uid="uid://bqqr42rsgjo0m" path="res://scenes/field_lines.tscn" id="1_ufoy2"]
@@ -13,6 +13,41 @@ font_color = Color(0.470588, 0, 0, 1)
 font = ExtResource("2_5tbpl")
 font_size = 64
 font_color = Color(0.470588, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_pmwcs"]
+font = ExtResource("2_5tbpl")
+font_size = 32
+font_color = Color(0.470588, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_51p2u"]
+bg_color = Color(0.821911, 1.85303e-06, 7.70092e-07, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.470588, 0, 0, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_idy2d"]
+bg_color = Color(0.470588, 0, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.423185, 5.65536e-07, 9.62615e-08, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="Theme" id="Theme_qv8d5"]
+Button/font_sizes/font_size = 32
+Button/fonts/font = ExtResource("2_5tbpl")
+Button/styles/hover = SubResource("StyleBoxFlat_51p2u")
+Button/styles/normal = SubResource("StyleBoxFlat_idy2d")
 
 [node name="Game" type="Control"]
 layout_mode = 3
@@ -65,3 +100,28 @@ offset_right = 762.0
 offset_bottom = 88.0
 text = "GAME OVER"
 label_settings = SubResource("LabelSettings_pnmup")
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -192.5
+offset_top = 11.0
+offset_right = 192.5
+offset_bottom = 51.0
+grow_horizontal = 2
+text = "TicTacToe x Minesweeper"
+label_settings = SubResource("LabelSettings_pmwcs")
+
+[node name="play" type="Button" parent="."]
+layout_mode = 0
+offset_left = 498.0
+offset_top = 594.0
+offset_right = 655.0
+offset_bottom = 635.0
+theme = SubResource("Theme_qv8d5")
+theme_override_font_sizes/font_size = 24
+text = "Play again"
+
+[connection signal="button_down" from="play" to="." method="_on_play_button_down"]

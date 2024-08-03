@@ -108,7 +108,8 @@ offset_bottom = 251.0
 text = "Try to find every allowed field!
 
 Click fields and when it is not a space neither 
-your first clicked letter, than you looose..."
+your first clicked letter, than you looose...
+Still in development!"
 label_settings = SubResource("LabelSettings_e3la7")
 horizontal_alignment = 1
 
